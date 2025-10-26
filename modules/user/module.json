@@ -1,0 +1,26 @@
+{
+    "id": "user",
+    "name": "User Management",
+    "description": "Comprehensive user profile management, preferences, and account settings",
+    "version": "1.0.0",
+    "author": "Solomon Ochepa",
+    "repository": "https://github.com/solomon-ochepa/users",
+    "dependencies": [
+        "core"
+    ],
+    "priority": 10,
+    "requires": [
+        "storage",
+        "crypto"
+    ],
+    "permissions": [
+        "read_user_data",
+        "write_user_data",
+        "manage_user_preferences"
+    ],
+    "tags": [
+        "essential",
+        "user-management",
+        "profiles"
+    ]
+}

@@ -1,10 +1,6 @@
 import * as FileSystem from 'expo-file-system';
 import { Module, ModuleDefinition } from './types';
 
-interface File {
-    readonly name: string;
-}
-
 interface ModuleRegistry {
     [key: string]: boolean;
 }
@@ -147,9 +143,7 @@ export class AutoModuleRegistry {
                 }
             }
 
-            // All checks passed
             return true;
-
         } catch (error) {
             console.error('Error checking file system:', error);
             return false;
@@ -179,10 +173,7 @@ export class AutoModuleRegistry {
         }
     }
 
-    private modulePath(module: string): string;
-    private modulePath(module: string, path: File): string;
-    private modulePath(module: string, path: string): string;
-    private modulePath(module: string, path: File | string = ''): string {
+    private modulePath(module: string, path?: string): string {
         const baseDirectory = FileSystem.documentDirectory;
         if (!baseDirectory) {
             return '';
@@ -209,7 +200,7 @@ export class AutoModuleRegistry {
                 break;
             case 'index':
                 path = `../${moduleId}/index`;
-                requiredFiles = ['index.js', 'index.ts']; // Check for common index file extensions
+                requiredFiles = ['index.ts']; // Check for common index file extensions
                 break;
         }
 

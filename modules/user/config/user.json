@@ -1,0 +1,27 @@
+{
+    "enabled": true,
+    "settings": {
+        "allowMultipleUsers": false,
+        "defaultCurrency": "USD",
+        "defaultLanguage": "en",
+        "autoCreateDemoUser": true,
+        "profileImageMaxSize": 5242880,
+        "sessionTimeout": 3600,
+        "passwordPolicy": {
+            "minLength": 8,
+            "requireUppercase": true,
+            "requireLowercase": true,
+            "requireNumbers": true,
+            "requireSpecialChars": true,
+            "maxAge": 90
+        }
+    },
+    "features": {
+        "biometricAuth": true,
+        "socialLogin": false,
+        "twoFactorAuth": false,
+        "profilePictures": true,
+        "preferenceSync": true,
+        "exportData": true
+    }
+}
