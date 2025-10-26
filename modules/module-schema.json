@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Module System Configuration",
+    "description": "Schema for validating module system configuration",
+    "type": "object",
+    "required": [
+        "name",
+        "version",
+        "description",
+        "architecture"
+    ],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the module system"
+        },
+        "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version of the module system"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the module system"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "module-system",
+                "plugin-system"
+            ],
+            "description": "Type of the system"
+        },
+        "architecture": {
+            "type": "object",
+            "required": [
+                "basePath",
+                "coreModule"
+            ],
+            "properties": {
+                "basePath": {
+                    "type": "string",
+                    "description": "Base path for modules"
+                },
+                "coreModule": {
+                    "type": "string",
+                    "description": "Name of the core module"
+                },
+                "autoDiscovery": {
+                    "type": "boolean",
+                    "description": "Whether to auto-discover modules"
+                }
+            }
+        },
+        "modules": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-z][a-z0-9-]*$": {
+                    "type": "object",
+                    "properties": {
+                        "required": {
+                            "type": "boolean",
+                            "description": "Whether the module is required"
+                        },
+                        "version": {
+                            "type": "string",
+                            "description": "Expected module version"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
