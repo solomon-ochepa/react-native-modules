@@ -1,0 +1,29 @@
+{
+    "id": "auth",
+    "name": "Authentication & Security",
+    "description": "Secure user authentication, session management, and security features",
+    "version": "1.0.0",
+    "author": "Accountant Team",
+    "repository": "https://github.com/solomon-ochepa/auth",
+    "dependencies": [
+        "user"
+    ],
+    "priority": 20,
+    "requires": [
+        "network",
+        "storage",
+        "crypto",
+        "biometrics"
+    ],
+    "permissions": [
+        "read_auth_data",
+        "write_auth_data",
+        "manage_sessions",
+        "access_biometrics"
+    ],
+    "tags": [
+        "security",
+        "authentication",
+        "essential"
+    ]
+}
