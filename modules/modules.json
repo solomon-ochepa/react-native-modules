@@ -1,3 +1,4 @@
 {
-    "user": true
+    "user": true,
+    "auth": true
 }
