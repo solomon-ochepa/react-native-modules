@@ -1,0 +1,20 @@
+{
+    "$schema": "../module-schema.json",
+    "environment": "development",
+    "autoInitialize": true,
+    "strictDependencyCheck": true,
+    "moduleDefaults": {
+        "enabled": true,
+        "logLevel": "info",
+        "features": {
+            "experimental": false,
+            "analytics": true
+        }
+    },
+    "runtime": {
+        "cacheEnabled": true,
+        "cacheTimeout": 300,
+        "offlineSupport": true,
+        "syncInterval": 300000
+    }
+}
